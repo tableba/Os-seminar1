@@ -1,0 +1,52 @@
+Task3:
+1. Thread.join() makes the main thread wait for thread1 until it has finished.
+If we remove it form the main method the print statement
+"Stopwatch thread has finished" will be executed directly.
+
+2. Yes it does differ, the java program runs slower than the smartphone timer.
+This is because Thread.sleep(10) isn't always exactly 10ms as it takes a little
+bit of time for the jvm to handle the sleep request.
+
+
+• How did you implement the task?
+Task1:
+I put the whole createProcess method inside the run method of another class, 
+then, inside the old createProcess method I started the run method of that
+class as a thread.
+
+Task2:
+I added a list of exceptions to the constructor of the ProcessThread class.
+Then every time its run method runs into an exception it prints it and
+additionally saves it into that list. The list is a keeps the stored exceptions
+even after the run method has finished.
+
+Task3:
+I created a BusyThread class that has a 60 second timer in its run method.
+This class is started as a thread and I put thread1.join() so that the main
+thread has to wait for thread1 to finish.
+
+• Why did you solve it in the way you did it?
+Task1:
+I understood that the lines of code in the createProcess method were basically
+one block of code that runs the terminal inside the java program. So I just took
+that block of code and ran it as a thread.
+
+Task2:
+I made a exceptions list variable and it is static, meaning that if it is changed
+in another method, the changes percist.
+
+Task3:
+I just ran the timer inside a thread and made the main thread wait for that thread.
+
+
+• What difference in behaviour did you notice?
+Task1:
+You can easily run a method as a thread. This make you more in control of the
+execution of thoses pieces of code.
+
+Task2:
+Thread.sleep() is slower than I thought.
+
+Task3:
+Same as task1.
+
